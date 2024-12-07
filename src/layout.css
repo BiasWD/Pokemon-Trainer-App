@@ -1,12 +1,21 @@
 .pokemon-trainer-container {
     display: flex;
     gap: 24px;
+    flex-direction: column-reverse;
+
 }
 .left-side {
     display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.center {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .right-side {
     display: flex;
     justify-content:center;
+    flex: 1;
 }

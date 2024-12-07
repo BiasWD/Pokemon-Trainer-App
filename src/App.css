@@ -19,7 +19,7 @@ ul {
 
 .options {
   display: flex;
-  flex: row;
+  flex-direction: row;
   gap: 12px;
   border-top: solid 2px #1A1A1A;
   padding-top: 12px;
