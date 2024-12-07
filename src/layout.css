@@ -1,0 +1,12 @@
+.pokemon-trainer-container {
+    display: flex;
+    gap: 24px;
+}
+.left-side {
+    display: flex;
+    justify-content: center;
+}
+.right-side {
+    display: flex;
+    justify-content:center;
+}
