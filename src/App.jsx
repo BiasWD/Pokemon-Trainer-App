@@ -179,7 +179,7 @@ function App() {
                 {!result ? (
                   <>
                     <p>The move will be?</p>
-                    <p> {answer}</p>
+                    <p>{answer} &nbsp;</p>
                   </>
                 ) : (
                   <p>
@@ -213,32 +213,7 @@ function App() {
             </div>
           </div>
           <div className="attack-section">
-            {!result ? (
-              <div>
-                <button
-                  disabled={result}
-                  className="Attack"
-                  onClick={() => attackClick()}
-                >
-                  Attack
-                </button>
-              </div>
-            ) : (
-              <div>
-                {!completedAttackers.includes(attacker.name) ? (
-                  <>
-                    <button className="Attack" style={{ marginRight: "12px" }}>
-                      {isCorrect ? (
-                        <img src={checkmark} style={{ width: "12px" }}></img>
-                      ) : (
-                        <img src={xmark} style={{ width: "12px" }}></img>
-                      )}
-                    </button>
-                    <button onClick={() => nextDefender()}>
-                      Next Defender{" "}
-                    </button>
-                  </>
-                ) : (
+            {completedAttackers.includes(attacker.name) ? (
                   <>
                     <p>
                       {" "}
@@ -248,9 +223,31 @@ function App() {
                       &nbsp; or choose a different attacker.
                     </p>
                   </>
-                )}
+                ) : ( <>
+            {!result ? (
+              <div>
+                <button
+                  disabled={result || answer === ""}
+                  className="Attack"
+                  onClick={() => attackClick()}
+                >
+                  Attack
+                </button>
               </div>
-            )}
+            ) : (
+              <div>
+                <>
+                  <button className="Attack" style={{ marginRight: "12px", backgroundColor: `${isCorrect ? "green" : "red"}`}}>
+                    {isCorrect ? (
+                      <img src={checkmark} style={{ width: "12px", backgroundColor: "white", padding: "2px", borderRadius: "100%"}}></img>
+                    ) : (
+                      <img src={xmark} style={{ width: "12px", backgroundColor: "white", padding: "2px", borderRadius: "100%" }}></img>
+                    )}
+                  </button>
+                  <button onClick={() => nextDefender()}>Next Defender </button>
+                </>
+              </div>
+            )} </> )}
           </div>
         </div>
         <div className="right-side">
