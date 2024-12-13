@@ -129,38 +129,8 @@ function App() {
 
   return (
     <>
-      <h1>{isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}</h1>
+      <h1 style={{ color: isPokemonMaster ? "Gold" : "" }}>{isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}</h1>
       <div className="pokemon-trainer-container">
-        <div className="left-side">
-          <div className="ChangeAttacker">
-            <button onClick={() => setChangeAttackIsOpen((prev) => !prev)}>
-              Choose Attacker
-            </button>
-            <ul
-              className="AttackerList"
-              style={
-                changeAttackIsOpen ? { display: "flex" } : { display: "none" }
-              }
-            >
-              <p>Mastered = *</p>
-              {types.map((type, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => {
-                      changeAttacker(type);
-                      setChangeAttackIsOpen(false);
-                      setCorrectCount(0);
-                    }}
-                    style={{ color: type.color }}
-                  >
-                    {type.name}
-                    {completedAttackers.includes(type.name) ? "*" : ""}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
         <div className="center">
           <div className="battle">
             <div className="Gym">
@@ -214,43 +184,98 @@ function App() {
           </div>
           <div className="attack-section">
             {completedAttackers.includes(attacker.name) ? (
-                  <>
-                    <p>
-                      {" "}
-                      <button onClick={() => resetAttacker(attacker.name)}>
-                        Reset this attacker
-                      </button>{" "}
-                      &nbsp; or choose a different attacker.
-                    </p>
-                  </>
-                ) : ( <>
-            {!result ? (
-              <div>
-                <button
-                  disabled={result || answer === ""}
-                  className="Attack"
-                  onClick={() => attackClick()}
-                >
-                  Attack
-                </button>
-              </div>
+              <>
+                <p>
+                  {" "}
+                  <button onClick={() => resetAttacker(attacker.name)}>
+                    Reset this attacker
+                  </button>{" "}
+                  &nbsp; or choose a different attacker.
+                </p>
+              </>
             ) : (
-              <div>
-                <>
-                  <button className="Attack" style={{ marginRight: "12px", backgroundColor: `${isCorrect ? "green" : "red"}`}}>
-                    {isCorrect ? (
-                      <img src={checkmark} style={{ width: "12px", backgroundColor: "white", padding: "2px", borderRadius: "100%"}}></img>
-                    ) : (
-                      <img src={xmark} style={{ width: "12px", backgroundColor: "white", padding: "2px", borderRadius: "100%" }}></img>
-                    )}
-                  </button>
-                  <button onClick={() => nextDefender()}>Next Defender </button>
-                </>
-              </div>
-            )} </> )}
+              <>
+                {!result ? (
+                  <div>
+                    <button
+                      disabled={result || answer === ""}
+                      className="Attack"
+                      onClick={() => attackClick()}
+                    >
+                      Attack
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <>
+                      <button
+                        className="Attack"
+                        style={{
+                          marginRight: "12px",
+                          backgroundColor: `${isCorrect ? "green" : "red"}`,
+                        }}
+                      >
+                        {isCorrect ? (
+                          <img
+                            src={checkmark}
+                            style={{
+                              width: "12px",
+                              backgroundColor: "white",
+                              padding: "2px",
+                              borderRadius: "100%",
+                            }}
+                          ></img>
+                        ) : (
+                          <img
+                            src={xmark}
+                            style={{
+                              width: "12px",
+                              backgroundColor: "white",
+                              padding: "2px",
+                              borderRadius: "100%",
+                            }}
+                          ></img>
+                        )}
+                      </button>
+                      <button onClick={() => nextDefender()}>
+                        Next Defender{" "}
+                      </button>
+                    </>
+                  </div>
+                )}{" "}
+              </>
+            )}
           </div>
         </div>
         <div className="right-side">
+          <div className="ChangeAttacker">
+            <button onClick={() => setChangeAttackIsOpen((prev) => !prev)}>
+              Choose Attacker
+            </button>
+            <ul
+              className="AttackerList"
+              style={
+                changeAttackIsOpen ? { display: "flex" } : { display: "none" }
+              }
+            >
+              <p>Mastered = *</p>
+              {types.map((type, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => {
+                      changeAttacker(type);
+                      setChangeAttackIsOpen(false);
+                      setCorrectCount(0);
+                    }}
+                    style={{ color: type.color }}
+                  >
+                    {type.name}
+                    {completedAttackers.includes(type.name) ? "*" : ""}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
           <p>
             Defenders Remaining vs {attacker.name}:{" "}
             <strong>{defenderTypes.length}</strong>

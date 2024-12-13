@@ -13,7 +13,7 @@ ul {
   padding: 12px;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: #43C549;
+  background-size: cover;
   }
 
 .checkorx {
@@ -92,12 +92,18 @@ ul {
 
 .ChangeAttacker {
   position: relative;
+  margin-right: auto;
 }
 
 .AttackerList {
   position: absolute;
   flex-direction: column;
   list-style-type: none;
+  background-color: #1A1A1A;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  border-radius: 24px;
 
 }
 .AttackerList button {
