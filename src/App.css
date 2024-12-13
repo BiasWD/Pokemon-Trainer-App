@@ -8,13 +8,13 @@ ul {
   list-style: none;
 }
 .battle {
-  background-image: url('./assets/pokemon_x_and_y_battle_background_11_by_phoenixoflight92_d843okx-414w-2x.jpg');
+  background-image: url("./assets/pokemon_x_and_y_battle_background_11_by_phoenixoflight92_d843okx-414w-2x.jpg");
   border-radius: 12px;
   padding: 12px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  }
+}
 
 .checkorx {
   width: 50px;
@@ -27,7 +27,7 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  border-top: solid 2px #1A1A1A;
+  border-top: solid 2px #1a1a1a;
   padding-top: 12px;
 }
 
@@ -36,17 +36,17 @@ ul {
   min-width: 375px;
   max-width: 375px;
   height: 150px;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   border-radius: 8px;
   border-style: solid;
   border-width: 2px;
-  border-color:#1A1A1A;
+  border-color: #1a1a1a;
   font-family: "Pixelify Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5rem;
-  color:#1A1A1A;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #1a1a1a;
   text-align: left;
 }
 .battletext p {
@@ -75,11 +75,11 @@ ul {
   flex: 1;
   height: fit-content;
   margin: 8px;
-  border-radius: 24px;;
+  border-radius: 24px;
 }
 .Attack {
   background-color: whitesmoke;
-  color: #1A1A1A;
+  color: #1a1a1a;
 }
 
 .attack-section {
@@ -99,13 +99,82 @@ ul {
   position: absolute;
   flex-direction: column;
   list-style-type: none;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   padding-right: 40px;
   padding-left: 40px;
   padding-bottom: 40px;
   border-radius: 24px;
-
 }
 .AttackerList button {
-margin: 2px;
+  margin: 2px;
+}
+
+.attacker-properties {
+  border-radius: 8px;
+  margin-top: 24px;
+}
+.attacker-properties div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attacker-properties h5 {
+  margin-right: 8px;
+}
+
+.attacker-properties p {
+  display: flex;
+  flex-wrap: wrap;
+}
+.attacker-properties span {
+  color: black;
+  background: rgb(172, 172, 172);
+  padding-left: 8px;
+  padding-right: 8px;
+  margin: 4px;
+  border-radius: 8px;
+}
+
+.typechart {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: #1a1a1a7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgandbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  max-width: 100vw;
+  height: 100vh;
+}
+
+.typechart img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.typechart button {
+
+  justify-content: end;
+  transform: translateY(70px);
+  width: 50px;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  border-radius: 100%;
+  border-width: 2px;
+  margin-right: 20px;
 }

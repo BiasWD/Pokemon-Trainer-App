@@ -5,6 +5,9 @@ import "./App.css";
 import xmark from "./assets/incorrect-icon.png";
 import checkmark from "./assets/tick-mark-icon.png";
 import pokeball from "./assets/pokeball-png-45334.png";
+import Showtypeproperties from "./showtypeproperties.jsx";
+import typechart from "./assets/typechart.png";
+import close from "./assets/remove-close-round-white-icon.png";
 import {
   Normal,
   Fire,
@@ -63,6 +66,8 @@ function App() {
   const [isCorrect, setIsCorrect] = useState("");
 
   const [changeAttackIsOpen, setChangeAttackIsOpen] = useState(false);
+
+  const [typeChartIsOpen, setTypeChartIsOpen] = useState(false);
 
   const [correctCount, setCorrectCount] = useState(0);
 
@@ -164,12 +169,41 @@ function App() {
     }
   };
 
+  const viewTypeChart = () => {
+    setTypeChartIsOpen(true);
+    setAnswer("");
+    setResult("");
+    setCorrectCount(0);
+    setDefenderTypes(types);
+    setCurrentDefenderIndex(0);
+    setDefender(types[0]);
+  };
+
   return (
     <>
-      <h1 style={{ color: isPokemonMaster ? "Gold" : "" }}>
-        {isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}
-      </h1>{" "}
-      <img style={{ width: "100px" }} src={pokeball} />
+
+      <div
+        style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
+        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", flexWrap: "wrap-reverse", justifyContent: "center"}}>
+        <h1 style={{ color: isPokemonMaster ? "Gold" : "" }}>
+          {isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}
+        </h1>
+        <img style={{ width: "100px", height: "100px", marginTop: "0"}} src={pokeball} />
+        </div>
+        <div style={{  marginRight: "auto", marginLeft: "auto", marginTop: "24px", marginBottom: "24px", display: "flex", flexDirection: "column"}}>
+          <button
+            onClick={() => {
+              viewTypeChart();
+            }}
+          >
+            View Type Chart
+          </button>
+          <p style={{ fontSize: ".75rem", marginTop: "0" }}>
+            Note: Attacker progress will be lost
+          </p>
+        </div>
+      </div>
       <div className="pokemon-trainer-container">
         <div className="center">
           <div className="battle">
@@ -232,6 +266,7 @@ function App() {
                   </button>{" "}
                   &nbsp; or choose a different attacker.
                 </p>
+                <Showtypeproperties attacker={attacker} />
               </>
             ) : (
               <>
@@ -286,6 +321,18 @@ function App() {
               </>
             )}
           </div>
+          {typeChartIsOpen ? (
+            <div className="typechart">
+              <div className="imgandbutton">
+                <button onClick={() => setTypeChartIsOpen(false)}>
+                  <img src={close}></img>
+                </button>
+                <img src={typechart} />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <div className="right-side">
           <div className="ChangeAttacker">
