@@ -1,15 +1,52 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import Typewriter from "typewriter-effect";
 import "./layout.css";
 import "./App.css";
 import xmark from "./assets/incorrect-icon.png";
 import checkmark from "./assets/tick-mark-icon.png";
-import { Water, Fire, Grass } from "./types.js";
+import pokeball from "./assets/pokeball-png-45334.png";
+import {
+  Normal,
+  Fire,
+  Water,
+  Electric,
+  Grass,
+  Ice,
+  Fighting,
+  Poison,
+  Ground,
+  Flying,
+  Psychic,
+  Bug,
+  Rock,
+  Ghost,
+  Dragon,
+  Dark,
+  Steel,
+  Fairy,
+} from "./types.js";
 
 function App() {
-  const types = [Water, Fire, Grass];
+  const types = [
+    Normal,
+    Fire,
+    Water,
+    Electric,
+    Grass,
+    Ice,
+    Fighting,
+    Poison,
+    Ground,
+    Flying,
+    Psychic,
+    Bug,
+    Rock,
+    Ghost,
+    Dragon,
+    Dark,
+    Steel,
+    Fairy,
+  ];
 
   const [defenderTypes, setDefenderTypes] = useState(types);
 
@@ -129,7 +166,10 @@ function App() {
 
   return (
     <>
-      <h1 style={{ color: isPokemonMaster ? "Gold" : "" }}>{isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}</h1>
+      <h1 style={{ color: isPokemonMaster ? "Gold" : "" }}>
+        {isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}
+      </h1>{" "}
+      <img style={{ width: "100px" }} src={pokeball} />
       <div className="pokemon-trainer-container">
         <div className="center">
           <div className="battle">
