@@ -49,7 +49,7 @@ ul {
   color: #1a1a1a;
   text-align: left;
 }
-.battletext p {
+.battletext p, .battletext-result {
   margin: 12px;
 }
 .effectiveness-buttons {

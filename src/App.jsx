@@ -226,7 +226,7 @@ function App() {
                     <p>{answer} &nbsp;</p>
                   </>
                 ) : (
-                  <p>
+                  <div className="battletext-result">
                     <Typewriter
                       onInit={(typewriter) => {
                         typewriter.typeString(`${result}`).start();
@@ -237,7 +237,7 @@ function App() {
                         delay: 40,
                       }}
                     />
-                  </p>
+                  </div>
                 )}
               </div>
               <div className="effectiveness-buttons">
