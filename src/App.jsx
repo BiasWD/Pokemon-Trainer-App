@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import Typewriter from "typewriter-effect";
 import "./layout.css";
 import "./App.css";
-import xmark from "./assets/incorrect-icon.png";
-import checkmark from "./assets/tick-mark-icon.png";
-import pokeball from "./assets/pokeball-png-45334.png";
+import xmark from "./images/incorrect-icon.png";
+import checkmark from "./images/tick-mark-icon.png";
+import pokeball from "./images/pokeball-png-45334.png";
 import Showtypeproperties from "./showtypeproperties.jsx";
-import typechart from "./assets/typechart.png";
-import close from "./assets/remove-close-round-white-icon.png";
+import typechart from "./images/typechart.png";
+import close from "./images/remove-close-round-white-icon.png";
 import {
   Normal,
   Fire,
