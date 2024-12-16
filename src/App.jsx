@@ -150,6 +150,8 @@ function App() {
     setResult("");
     setCorrectCount(0);
     setDefenderTypes(types);
+    setCurrentDefenderIndex(0);
+    setDefender(types[0]);
   };
 
   const resetAttacker = (attackerToReset) => {
@@ -164,6 +166,8 @@ function App() {
       setResult("");
       setCorrectCount(0);
       setDefenderTypes(types);
+      setCurrentDefenderIndex(0);
+      setDefender(types[0]);
     } else {
       ("");
     }
@@ -181,17 +185,40 @@ function App() {
 
   return (
     <>
-
       <div
-        style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
       >
-        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", flexWrap: "wrap-reverse", justifyContent: "center"}}>
-        <h1 style={{ color: isPokemonMaster ? "Gold" : "" }}>
-          {isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}
-        </h1>
-        <img style={{ width: "100px", height: "100px", marginTop: "0"}} src={pokeball} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            flexWrap: "wrap-reverse",
+            justifyContent: "center",
+          }}
+        >
+          <h1 style={{ color: isPokemonMaster ? "Gold" : "" }}>
+            {isPokemonMaster ? "Pokemon Master" : "Pokemon Trainer"}
+          </h1>
+          <img
+            style={{ width: "100px", height: "100px", marginTop: "0" }}
+            src={pokeball}
+          />
         </div>
-        <div style={{  marginRight: "auto", marginLeft: "auto", marginTop: "24px", marginBottom: "24px", display: "flex", flexDirection: "column"}}>
+        <div
+          style={{
+            marginRight: "auto",
+            marginLeft: "auto",
+            marginTop: "24px",
+            marginBottom: "24px",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <button
             onClick={() => {
               viewTypeChart();
