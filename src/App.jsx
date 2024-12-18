@@ -8,6 +8,7 @@ import pokeball from "./images/pokeball-png-45334.png";
 import Showtypeproperties from "./showtypeproperties.jsx";
 import typechart from "./images/typechart.png";
 import close from "./images/remove-close-round-white-icon.png";
+import Toggle from "./components/Toggle.jsx";
 import {
   Normal,
   Fire,
@@ -28,6 +29,7 @@ import {
   Steel,
   Fairy,
 } from "./types.js";
+
 
 function App() {
   const types = [
@@ -74,6 +76,8 @@ function App() {
   const [completedAttackers, setCompletedAttackers] = useState([]);
 
   const [isPokemonMaster, setIsPokemonMaster] = useState(false);
+
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     if (correctCount === types.length) {
@@ -184,7 +188,8 @@ function App() {
   };
 
   return (
-    <>
+    <div data-theme={isDark ? "dark" : ""} className="app">
+      <Toggle handleChange={() => setIsDark(!isDark)} isChecked={isDark} />
       <div
         style={{
           display: "flex",
@@ -213,8 +218,8 @@ function App() {
           style={{
             marginRight: "auto",
             marginLeft: "auto",
-            marginTop: "24px",
-            marginBottom: "24px",
+            marginTop: "32px",
+            marginBottom: "32px",
             display: "flex",
             flexDirection: "column",
           }}
@@ -396,7 +401,7 @@ function App() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

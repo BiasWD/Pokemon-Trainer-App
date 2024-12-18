@@ -1,7 +1,15 @@
 #root {
-  margin: 0 auto;
-  padding: 2rem;
+  margin: auto;
+  padding: 0;
   text-align: center;
+}
+
+.app{
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+  min-width: 100vw;
+  min-height: 100vh;
+  transition: background-color 0.3s ease-in-out;
 }
 
 ul {
@@ -36,17 +44,17 @@ ul {
   min-width: 375px;
   max-width: 375px;
   height: 150px;
-  background-color: whitesmoke;
+  background-color: var(--attack-button-bg-color);
   border-radius: 8px;
   border-style: solid;
   border-width: 2px;
-  border-color: #1a1a1a;
+  border-color: var(--secondary-color);
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 1.5rem;
-  color: #1a1a1a;
+  color: var(--secondary-color);
   text-align: left;
 }
 .battletext p, .battletext-result {
@@ -73,13 +81,14 @@ ul {
 
 .Gym h2 {
   flex: 1;
+  color: white;
   height: fit-content;
   margin: 8px;
   border-radius: 24px;
 }
 .Attack {
-  background-color: whitesmoke;
-  color: #1a1a1a;
+  background-color: var(--attack-button-bg-color);
+  color: var(--secondary-color);
 }
 
 .attack-section {
@@ -99,7 +108,7 @@ ul {
   position: absolute;
   flex-direction: column;
   list-style-type: none;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg-color);
   padding-right: 40px;
   padding-left: 40px;
   padding-bottom: 40px;
@@ -170,6 +179,7 @@ ul {
 
   justify-content: end;
   transform: translateY(70px);
+  background-color: #242424;
   width: 50px;
   padding: 0;
   margin: 0;
